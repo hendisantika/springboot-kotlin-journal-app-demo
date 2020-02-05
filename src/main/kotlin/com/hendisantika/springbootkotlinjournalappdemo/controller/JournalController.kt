@@ -1,7 +1,9 @@
 package com.hendisantika.springbootkotlinjournalappdemo.controller
 
+import com.hendisantika.springbootkotlinjournalappdemo.model.Journal
 import com.hendisantika.springbootkotlinjournalappdemo.repository.JournalRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -16,4 +18,8 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RestController
 @RequestMapping("/api")
-class JournalController(@Autowired private val journalRepository: JournalRepository)
+class JournalController(@Autowired private val journalRepository: JournalRepository) {
+    //gets all journals
+    @GetMapping("/journals")
+    fun getAllJournals(): List<Journal> = journalRepository.findAll()
+}
