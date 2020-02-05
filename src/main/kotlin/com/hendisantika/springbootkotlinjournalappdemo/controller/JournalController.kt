@@ -3,9 +3,8 @@ package com.hendisantika.springbootkotlinjournalappdemo.controller
 import com.hendisantika.springbootkotlinjournalappdemo.model.Journal
 import com.hendisantika.springbootkotlinjournalappdemo.repository.JournalRepository
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,4 +21,9 @@ class JournalController(@Autowired private val journalRepository: JournalReposit
     //gets all journals
     @GetMapping("/journals")
     fun getAllJournals(): List<Journal> = journalRepository.findAll()
+
+    //creates a journal
+    @PostMapping("/journals")
+    fun createJournal(@Valid @RequestBody journal: Journal): Journal = journalRepository.save(journal)
+
 }
