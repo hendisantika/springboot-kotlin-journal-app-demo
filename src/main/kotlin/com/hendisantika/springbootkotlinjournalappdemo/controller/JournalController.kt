@@ -33,4 +33,13 @@ class JournalController(@Autowired private val journalRepository: JournalReposit
             journalRepository.findById(journalId).map {
                 ResponseEntity.ok(it)
             }.orElse(ResponseEntity.notFound().build())
+
+    //updates a journal
+    @PutMapping("/journals/{journalId}")
+    fun updateJournal(@PathVariable journalId: Long, @Valid @RequestBody updatedJournal: Journal)
+            : ResponseEntity<Journal> =
+            journalRepository.findById(journalId).map {
+                val newJournal = it.copy(title = updatedJournal.title, content = updatedJournal.content)
+                ResponseEntity.ok().body(journalRepository.save(newJournal))
+            }.orElse(ResponseEntity.notFound().build())
 }
