@@ -3,6 +3,7 @@ package com.hendisantika.springbootkotlinjournalappdemo.controller
 import com.hendisantika.springbootkotlinjournalappdemo.model.Journal
 import com.hendisantika.springbootkotlinjournalappdemo.repository.JournalRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
@@ -26,4 +27,10 @@ class JournalController(@Autowired private val journalRepository: JournalReposit
     @PostMapping("/journals")
     fun createJournal(@Valid @RequestBody journal: Journal): Journal = journalRepository.save(journal)
 
+    //gets a single journal
+    @GetMapping("journals/{journalId}")
+    fun getJournalById(@PathVariable journalId: Long): ResponseEntity<Journal> =
+            journalRepository.findById(journalId).map {
+                ResponseEntity.ok(it)
+            }.orElse(ResponseEntity.notFound().build())
 }
