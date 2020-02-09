@@ -27,3 +27,5 @@
 **Delete Journal by ID**
 
 ![Delete Journal by ID](img/delete.png "Delete Journal by ID")
+
+If You want to test REST API directly You can import the POSTMAN collection here.
