@@ -1,0 +1,205 @@
+{
+  "info": {
+    "_postman_id": "0883cd96-74b4-44ab-aec8-d7aae11b996b",
+    "name": "Kotlin Journal App",
+    "description": "Kotlin Journal App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create New Journal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"C++ in Action\", \n\t\"content\": \"C++ in Action Description Content\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/journals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "journals"
+          ]
+        },
+        "description": "Create New Journal"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Journals",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"Java in Action\", \n\t\"content\": \"Java in Action Description Content\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/journals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "journals"
+          ]
+        },
+        "description": "Get All Journals"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Journal by ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"Java in Action\", \n\t\"content\": \"Java in Action Description Content\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/journals/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "journals",
+            "3"
+          ]
+        },
+        "description": "Get Journal by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Journal by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"Java in Action\", \n\t\"content\": \"Java in Action Description Content 2\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/journals/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "journals",
+            "3"
+          ]
+        },
+        "description": "Update Journal by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Journal By Id",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"From Java to Kotlin in Action\", \n\t\"content\": \"From Java to Kotlin in Action Description Content\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/journals/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "journals",
+            "6"
+          ]
+        },
+        "description": "Delete Journal By Id"
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
